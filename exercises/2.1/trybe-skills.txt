@@ -1,8 +1,8 @@
 O que eu vou aprender na Trybe:
 
+- PHYTON
 - UNIX
 - BASH
 - GIT
 - HTML
 - CSS
-
