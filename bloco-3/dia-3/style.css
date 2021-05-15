@@ -1,0 +1,82 @@
+.caixa {
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: top;
+  }
+
+  .largura-altura {
+    height: 50px;
+    width: 50px;
+  }
+
+  .padding {
+    /* insira aqui um padding de 20px na classe abaixo para aplicá-lo aos itens B, C e D */
+    padding: 20px;
+  }
+
+  .margin {
+    /* insira aqui uma margem de 30px na classe abaixo para aplicá-la aos itens C e D */
+    margin: 30px;
+  }
+
+  .border {
+    /* insira aqui uma borda com valor '5px solid black' para aplicá-la ao item D */
+    border: 5px solid black;
+  }
+
+  /*Referente ao arquivo posicionamento.html*/
+.super-mario {
+    width: 200px;
+    position: absolute;
+    z-index: 1;
+  }
+
+.goomba {
+   width: 200px;
+   position: absolute;
+   z-index: 2;
+
+   margin-top: 300px;
+}
+
+.baloon {
+    width: 200px;
+    position: absolute;
+    left: 400px;
+    z-index: 3;
+}
+
+.bowser {
+    width: 200px;  
+    position: absolute;  
+    left: 600px;
+    top: 150px;
+}
+
+.frase {
+    position: absolute;
+    z-index: 4;
+    left: 418px;
+    top: 110px;
+    font-style: italic;
+}
+
+/*Referente ao arquivo agruparamento_pseudoclasses.html*/
+
+.centralizaTexto {
+    text-align: center;
+}
+
+ol li:hover{
+    background-color: dodgerblue;
+}
+
+ol li:active {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+ul, ol {
+    list-style: none
+}
