@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ranking</title>
     <style>
-      h1 {
+      h1, h3 {
         text-align: center;
       }
 
@@ -33,20 +33,33 @@
         width: 300px;
       }
 
+      ul li{
+        display: inline-block;
+      }
+      
+      .alinhaCentro {
+        text-align: center;
+      }
+      
+
     </style>
   </head>
   <body>
     <header>
       <h1>Hackathon Results</h1>
     </header>
-    <section>
+
+    <section class="alinhaCentro">
       <ul>
         <li class="first">1º - Equipe 1</li>
-        <li class="second">2º - Equipe 2</li>
-        <li class="third">3º - Equipe 3</li>
+        <div>
+            <li class="second">2º - Equipe 2</li>
+            <li class="third">3º - Equipe 3</li>
+        </div>
       </ul>
     </section>
-    <section>
+
+    <section class="alinhaCentro">
       <h3>Premiação Primeiro Lugar:</h3>
       <ul>
         <li>| R$ 1000,00 por integrante da equipe |</li>
@@ -63,5 +76,6 @@
         <li>| Participação no processo seletivo para o Bootcamp |</li>
       </ul>
     </section>
+
   </body>
 </html>
