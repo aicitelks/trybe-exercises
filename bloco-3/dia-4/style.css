@@ -1,0 +1,12 @@
+p{
+    width: 500px;
+}
+
+footer{
+    margin-top: 30px;
+}
+
+aside{
+    display: inline-block;
+    text-align: right;
+}
