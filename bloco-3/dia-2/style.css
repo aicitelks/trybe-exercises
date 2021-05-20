@@ -1,0 +1,46 @@
+h1 {
+    font-size: 65px;
+    color: orange;
+}
+
+/*Para usar com ID*/
+#listaCores {
+    background-color: lightseagreen;
+}
+
+/*Para usar com CLASSE*/
+.corPadrao {
+    background-color:aquamarine;
+    color: mintcream;
+}
+
+body {
+    font-size: 16px;
+}
+
+h1 {
+    font-family: sans-serif;
+}
+
+p {
+    font-weight: 600;
+    font-size: 3em;
+}
+
+ul {
+    font-style: italic;
+    line-height: 50px;
+    text-align:center;
+    text-decoration: underline;
+}
+
+#liAm {
+    background-color: yellow;
+}
+#liVe {
+    background-color: red;
+}
+
+#liMa {
+    background-color: maroon;
+}
