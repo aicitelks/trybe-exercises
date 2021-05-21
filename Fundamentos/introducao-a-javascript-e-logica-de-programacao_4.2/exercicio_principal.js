@@ -19,6 +19,11 @@ let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 let soma = 0;
 let maiorNum = 0;
 let aux = 0;
+let cont = 0;
+let menorNum = 0;
+let array25 = [];
+let i = 0;
+let arrayDiv = [];
 
 console.log('Os valores iniciais do Array são: ' + numbers);
 
@@ -47,3 +52,40 @@ for (let index = 0; index < numbers.length; index += 1) {
     }
 }
 console.log('O maior número do array é ' + maiorNum);
+
+for (let index = 0; index < numbers.length; index += 1) {
+    let parImpar = numbers[index];
+    if ((parImpar % 2) != 0) {
+        console.log('O número [' + numbers[index] + '] é ÍMPAR.');
+        cont += 1;
+    }
+}
+if (cont === 0) {
+    console.log('Nenhum valor ímpar encontrado!');
+}
+
+for (let index = 0; index < numbers.length; index += 1) {
+    menorNum = numbers[index];
+    for (let indexComparativo = numbers.length; indexComparativo > 0; indexComparativo -= 1) {
+        let aux = numbers[indexComparativo-1];
+
+        if (menorNum > aux) {
+            menorNum = aux;
+        }
+    }
+}
+console.log('O menor número do array é ' + menorNum);
+
+for (let index = 1; index <= 25; index += 1) {
+    array25[i] = index;
+    i = i + 1;
+}
+console.log('O array com 25 números é: ' + array25);
+
+for (index = 0; index < array25.length; index += 1) {
+    let aux = array25[index] / 2;
+    arrayDiv[i] = aux;
+    i = i + 1;
+}
+console.log('Resultado das divisões: ');
+console.log(arrayDiv);
