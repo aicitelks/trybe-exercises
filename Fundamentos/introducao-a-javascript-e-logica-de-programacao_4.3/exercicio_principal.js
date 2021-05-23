@@ -46,5 +46,5 @@ console.log('Exercício 2');
 
 for (let index = 1; index <= n; index += 1) {
     linha2 = linha2 + asterisco;
+    console.log(linha2);
 }
-console.log(linha2);
