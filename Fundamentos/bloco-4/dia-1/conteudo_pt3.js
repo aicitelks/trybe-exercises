@@ -37,5 +37,7 @@ let perimetro = 0;
 area = base * altura;
 perimetro = base + altura;
 
-console.log('A área do retângulo de base ' + base + ' e altura ' + altura + ' é: ' + area);
-console.log('O perímetro do retângulo de base ' + base + ' e altura ' + altura + ' é: ' + perimetro);
+console.log('> Base: ' + base);
+console.log('> Alutra: ' + altura);
+console.log('A área do retângulo é: ' + area);
+console.log('O perímetro do retângulo é: ' + perimetro);
