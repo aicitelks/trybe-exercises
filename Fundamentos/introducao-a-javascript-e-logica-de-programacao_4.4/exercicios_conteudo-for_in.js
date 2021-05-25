@@ -25,3 +25,7 @@ let carros = ['Alfa Romeo', 'Ferrari', 'Audi'];
 for (let i of carros) {
     console.log(i);
 }
+// Para imprimir o índice do array
+for (let a in carros) {
+    console.log(a);
+}
