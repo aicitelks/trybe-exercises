@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2 id='page-title'>Título</h2>
+    <p id='paragraph' class='paragrafo'>Dê uma cor para este parágrafo!</p>
+    <h4 id='subtitle'>Subtítulo</h4>
+    <p id='second-paragraph' class='paragrafo'>Segundo parágrafo!</p>
+
+    <script>
+      //const paragraph = document.getElementById('paragraph');
+      //paragraph.style.color = 'red';
+      //Recupere o elemento que contém o título da página e faça algo com ele, como alterá-lo para o nome do seu filme favorito. 
+      document.getElementById('page-title').innerText = 'Avatar';
+      // Agora recupere o segundo parágrafo e use sua criatividade para alterá-lo.
+      document.getElementById('paragraph').innerText = 'Seres azuis, com características humanas, mostram como que o amor pela natureza só traz benefícios.';
+      //Por fim, recupere o subtítulo e altere-o também.
+      document.getElementById('subtitle').innerText= 'Assista!';
+
+
+      // Adicione uma classe igual para os dois parágrafos. OK
+      // Recupere os seus parágrafos via código JavaScript, usando a função getElementsByClassName ;
+      // Altere algum estilo do primeiro deles.
+      document.getElementsByClassName('paragrafo')[0].style.backgroundColor='blue';
+      document.getElementsByClassName('paragrafo')[0].style.color='white';
+    
+      // Recupere o subtítulo e altere a cor dele usando a função getElementsByTagName .
+      document.getElementsByTagName('h4')[0].style.color ='green';
+
+      // função única onde é possível fazer todos esses acessos: querySelector()
+      // ao buscar uma tag ele vai retorar o primeiro que encontrar
+
+      // retorna uma array com todos os elementos que "casem" com a sua seleção querySelectorAll()
+      // importante especificar a posição do array para trabalhar no local correto.
+
+    </script>
+  </body>
+</html>
