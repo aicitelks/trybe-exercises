@@ -3,31 +3,37 @@ Para o primeiro exercício de hoje, faça um programa que, dado um valor n qualq
 
 n = 5
 
+~~~
 *****
 *****
 *****
 *****
 *****
+~~~
 
 # EXERCÍCIO 2
 Para o segundo exercício, faça o mesmo que antes, mas que imprima um triângulo retângulo com 5 asteriscos de base. Por exemplo: 
 n = 5
 
+~~~
 *
 **
 ***
 ****
 *****
+~~~
 
 # EXERCÍCIO 3
 Agora inverta o lado do triângulo. Por exemplo: 
 n = 5
 
+~~~
     *
    **
   ***
  ****
 *****
+~~~
 
 Atenção! Note que esse exercício é bem mais complexo que o anterior! 
 Não basta, aqui, imprimir somente asteriscos. Você precisará de uma lógica para imprimir espaços também. 
@@ -37,9 +43,11 @@ Não basta, aqui, imprimir somente asteriscos. Você precisará de uma lógica p
 Depois, faça uma pirâmide com n asteriscos de base: 
 n = 5
 
+~~~
   *
  ***
 *****
+~~~
 
 # BÔNUS 1
 Faça uma pirâmide com n asteriscos de base que seja vazia no meio. Assuma que o valor de n será sempre ímpar: 
@@ -47,10 +55,12 @@ Faça uma pirâmide com n asteriscos de base que seja vazia no meio. Assuma que 
 Por último, façamos com que a variável seja incrementada com o valor correspondente a cada loop;
 n = 7
 
+~~~
    *
   * *
  *   *
 *******
+~~~
 
 # BÔNUS 2
 Faça um programa que diz se um número definido numa variável é primo ou não.
