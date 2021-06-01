@@ -34,14 +34,14 @@ Não basta, aqui, imprimir somente asteriscos. Você precisará de uma lógica p
 
 
 # EXERCÍCIO 4 
-4- Depois, faça uma pirâmide com n asteriscos de base: 
+Depois, faça uma pirâmide com n asteriscos de base: 
 n = 5
 
   *
  ***
 *****
 
-# EXERCÍCIO 5
+# BÔNUS 1
 Faça uma pirâmide com n asteriscos de base que seja vazia no meio. Assuma que o valor de n será sempre ímpar: 
 
 Por último, façamos com que a variável seja incrementada com o valor correspondente a cada loop;
@@ -52,7 +52,7 @@ n = 7
  *   *
 *******
 
-# EXERCÍCIO 6
+# BÔNUS 2
 Faça um programa que diz se um número definido numa variável é primo ou não.
 
 Um número primo é um número que só é divisível por 1 e por ele mesmo, ou seja, a divisão dele com quaisquer 
