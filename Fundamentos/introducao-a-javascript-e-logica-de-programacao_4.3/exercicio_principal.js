@@ -80,3 +80,13 @@ for (let index = 0; index < n; index += 1) {
     linha3 = '';
     posicao -= 1;
 }
+
+/** EXERCÍCIO 4 
+ * 4- Depois, faça uma pirâmide com n asteriscos de base: 
+ * n = 5
+
+  *
+ ***
+*****
+
+*/
