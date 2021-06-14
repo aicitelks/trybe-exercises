@@ -51,7 +51,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-basis: 700px;
-  flex-grow: 10;
+  flex-grow: 10; /* expande o container*/
 }
 
 .movie-container h2 {
