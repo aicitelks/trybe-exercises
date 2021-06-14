@@ -25,6 +25,7 @@ body {
   display: flex;
   flex-basis: 100%;
   order: 2;
+  align-self: center;
 }
 
 .menu-container ul {
