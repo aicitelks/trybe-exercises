@@ -80,8 +80,8 @@ body {
   display: flex;
   flex-direction: column;
   flex-basis: 350px;
-  align-self: center;
-  flex-grow: 1;
+  align-self: center; /* alinha no centro */
+  flex-grow: 1; /* permite expandir */
   margin: 20px;
 }
 
