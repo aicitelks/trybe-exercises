@@ -64,7 +64,19 @@ header ul li {
   }
   
 }
-/* 
-@media screen and (min-width: 1200px) {
 
-} */
+@media screen and (min-width: 1200px) {
+  .inicial {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px;
+  }
+
+.aside-one ul li:nth-child(1) {
+  color: white;
+}
+
+  .container footer h3, a {
+    color:rgb(255, 222, 192);
+  }
+}
