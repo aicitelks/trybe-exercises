@@ -11,24 +11,34 @@ body {
   color: rgb(43, 43, 43);
 }
 
+header {
+  align-items: center;
+  background-color: rgb(255, 203, 242);
+  display: flex;
+  justify-content: space-around;
+}
+header p {
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  font-weight: 900;
+}
+
+header ul li {
+  list-style-type: none;
+  color:rgb(255, 255, 255)
+}
+
+.container .main-content {
+  margin: 30px 30px;
+  text-align: justify;
+}
+
+.container footer {
+  text-align: center;
+  margin: auto;
+}
+
 @media screen and (max-width: 600px) {
-
-  header {
-    align-items: center;
-    background-color: rgb(255, 203, 242);
-    display: flex;
-    justify-content: space-around;
-  }
-  header p {
-    color: rgb(255, 255, 255);
-    font-size: 25px;
-    font-weight: 900;
-  }
-
-  header ul li {
-    list-style-type: none;
-  }
-
   .container h2{
     font-size: 18px;
   }
@@ -39,25 +49,22 @@ body {
     align-items: center;
   }
 
-  .container .main-content {
-    margin: 30px 30px;
-    text-align: justify;
-  }
-
-  .container footer {
-    text-align: center;
-    margin: auto;
-  }
-
   .container footer h3, a {
     color:rgb(255, 255, 255);
   }
 }
-/* 
+
 @media screen and (min-width: 601px) {
-
+  .inicial {
+    display: flex;
+    justify-content: center;
+  }
+  .container footer h3, a {
+    color:rgb(192, 253, 255);
+  }
+  
 }
-
+/* 
 @media screen and (min-width: 1200px) {
 
 } */
