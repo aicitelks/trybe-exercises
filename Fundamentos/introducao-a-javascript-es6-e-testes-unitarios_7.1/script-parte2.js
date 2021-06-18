@@ -16,15 +16,18 @@ console.log(`O resultado do fatorial é: ${fatorial(4)}`);
 
 // console.log(frase.split(' '));
 
-let frase = 'Faça um novo futuro. Começe hoje!';
-let palavras = frase.split(' ');
-let palavrao = '';
+let frase = 'Faça um novo futuro ... Start Now!';
 // console.log(frase.split(' ')[3].length);
 
-for (let palavraComparativa of palavras) {
-  if (palavraComparativa.length > palavrao.length) {
-    palavrao = palavraComparativa;
-  }
-}
+const maiorPalavra = (frase) => {
+  let palavras = frase.split(' ');
+  let palavrao = '';
 
-console.log(`A maior palavra da frase "${frase}" é: ${palavrao}`);
+  for (let palavraComparativa of palavras) {
+    if (palavraComparativa.length > palavrao.length) {
+      palavrao = palavraComparativa;
+    }
+  }
+  return palavrao;
+}
+console.log(`A maior palavra da frase "${frase}" é: "${maiorPalavra(frase)}" que possui "${maiorPalavra(frase).length}" caracteres`);
