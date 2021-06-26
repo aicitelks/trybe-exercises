@@ -92,13 +92,41 @@ const expectedResult = [
 ];
 
 /* 
-  2 - Construa um array de objetos a partir do array de livros. Cada objeto deve conter uma propriedade author , com o nome da pessoa autora do livro, e uma propriedade age com a idade dessa pessoa quando o livro foi lançado. O array deve ser ordenado por idade, ou seja, da pessoa mais jovem para a mais velha considerando suas idades quando o livro foi lançado.
+  2 - Construa um array de objetos a partir do array de livros. 
+  Cada objeto deve conter uma propriedade author, com o nome da pessoa autora do livro, 
+  e uma propriedade age com a idade dessa pessoa quando o livro foi lançado. 
+  
+  O array deve ser ordenado por idade, ou seja, da pessoa mais jovem para a mais velha considerando suas idades quando o livro foi lançado.
 
   Dica: use as funções map , sort
- */
+
+  [
+    {
+      author: nome
+      age: idade      
+    }
+  ]
+*/
 
 function nameAndAge() {
   // escreva seu código aqui
+  const autorIdade = books.map((book) => {
+
+    const informacoesAutor = {
+      age: book.releaseYear - book.author.birthYear,
+      author: book.author.name
+    }
+    return informacoesAutor;
+  });
+  
+  return autorIdade.sort((value1, value2) => {
+    return value1.age - value2.age;
+  });
 }
 
+// para testar com o play, sem usar o assert
+// console.log(nameAndAge());
+
 assert.deepStrictEqual(nameAndAge(), expectedResult);
+
+// IMPORTANTE! o sort() ordena um array, por isso que ao tentar ordenar o objeto 'informacoesautor' apresenta o erro que o sort() não era uma função, ou seja, ele não conseguia trabalhar como uma função, pois estava atrelado a um objeto e não a um array
