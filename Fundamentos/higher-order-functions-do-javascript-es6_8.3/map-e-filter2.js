@@ -125,8 +125,8 @@ function nameAndAge() {
 }
 
 // para testar com o play, sem usar o assert
-// console.log(nameAndAge());
+console.log(nameAndAge());
 
-assert.deepStrictEqual(nameAndAge(), expectedResult);
+//assert.deepStrictEqual(nameAndAge(), expectedResult);
 
 // IMPORTANTE! o sort() ordena um array, por isso que ao tentar ordenar o objeto 'informacoesautor' apresenta o erro que o sort() não era uma função, ou seja, ele não conseguia trabalhar como uma função, pois estava atrelado a um objeto e não a um array
