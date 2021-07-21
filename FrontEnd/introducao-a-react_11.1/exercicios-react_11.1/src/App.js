@@ -1,25 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
 
+import React from 'react';
+
 const Task = (value) => {
   return (
     <li>{value}</li>
   );
 }
 
-function App() {
-  return (
-    Task('Item 1')
+const compromissos = ['café da manhã', 'estudar', 'almoçar', 'estudar na Trybe', 'café da noite'];
 
-/*     <div className="App">
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
       <header className="App-header">
+        
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          
-        </p>        
+        
+        <ul>{ compromissos.map((compromisso) => Task(compromisso)) }</ul>
       </header>
-    </div> */
-  );
+    </div>
+    );
+  }  
 }
 
 export default App;
