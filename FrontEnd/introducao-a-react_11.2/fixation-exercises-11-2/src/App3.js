@@ -5,26 +5,52 @@ import UserProfile from './components/App3_UserProfile';
 
 class App extends React.Component {
   render() {
-    const joao = {
-      id: 102,
-      name: "João",
-      email: "joao@gmail.com",
-      avatar: "https://cdn.pixabay.com/photo/2016/08/20/05/38/avatar-1606916_640.png"
-    };
+    
+    /* filhos gerados de forma estática */
+    /*
+      const joao = {
+        id: 102,
+        name: "João",
+        email: "joao@gmail.com",
+        avatar: "https://cdn.pixabay.com/photo/2016/08/20/05/38/avatar-1606916_640.png"
+      };
 
-    const amelia = {
-      id: 77,
-      name: "Amélia",
-      email: "amelia@gmail.com",
-      avatar: "https://cdn.pixabay.com/photo/2017/01/31/13/05/cameo-2023867_640.png"
-    };
+      const amelia = {
+        id: 77,
+        name: "Amélia",
+        email: "amelia@gmail.com",
+        avatar: "https://cdn.pixabay.com/photo/2017/01/31/13/05/cameo-2023867_640.png"
+      };
+
+      return (
+        <div className="App">        
+            <UserProfile user={ joao } />
+            <UserProfile user={ amelia } />
+        </div>
+      ); 
+    */
+
+    /* filhos gerados de forma DINÂMICA */
+    const users = [
+      {
+        id: 102,
+        name: "João",
+        email: "joao@gmail.com",
+        avatar: "https://cdn.pixabay.com/photo/2016/08/20/05/38/avatar-1606916_640.png"
+      },
+      {
+        id: 77,
+        name: "Amélia",
+        email: "amelia@gmail.com",
+        avatar: "https://cdn.pixabay.com/photo/2017/01/31/13/05/cameo-2023867_640.png"
+      }
+    ];
 
     return (
       <div className="App">
-        <UserProfile user={ joao } />
-        <UserProfile user={ amelia } />
+        { users.map((user) => <UserProfile key={user.id} user={ user }/>) }
       </div>
-    );
+    )
   }
 }
 
