@@ -9,9 +9,9 @@ class PokemonComponent extends React.Component {
           <img src={ this.props.pokemonProp.image } alt=""/>          
         </div>
         <div>
-          <p>{ `${this.props.pokemonProp.name}
-          ◽️ Tipo: ${this.props.pokemonProp.type}
-          ◽️ Peso: ${this.props.pokemonProp.averageWeight.value} ${this.props.pokemonProp.averageWeight.measurementUnit}` }</p>              
+          <p>{`${this.props.pokemonProp.name}`}</p>
+          <p>{`Tipo: ${this.props.pokemonProp.type}`}</p>
+          <p>{`Peso: ${this.props.pokemonProp.averageWeight.value} ${this.props.pokemonProp.averageWeight.measurementUnit}`}</p>
         </div>
       </section>
     );
