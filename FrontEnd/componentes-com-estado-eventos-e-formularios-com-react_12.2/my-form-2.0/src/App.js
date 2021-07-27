@@ -2,6 +2,7 @@ import './App.css';
 
 import React from 'react';
 import Nome from './components/nome';
+import Email from './components/email';
 
 class App extends React.Component {
   render() {
@@ -12,8 +13,8 @@ class App extends React.Component {
 
           <fieldset className="curriculum">
             <Nome />
-{/*             <Email />
-            <CPF />
+            <Email />
+{/*            <CPF />
             <Endereco />
             <Cidade />
             <Estado /> */}
