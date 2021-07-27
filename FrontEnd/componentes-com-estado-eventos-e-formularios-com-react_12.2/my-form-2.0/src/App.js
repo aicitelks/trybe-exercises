@@ -1,6 +1,7 @@
 import './App.css';
 
 import React from 'react';
+import Nome from './components/nome';
 
 class App extends React.Component {
   render() {
@@ -11,21 +12,21 @@ class App extends React.Component {
 
           <fieldset className="curriculum">
             <Nome />
-            <Email />
+{/*             <Email />
             <CPF />
             <Endereco />
             <Cidade />
-            <Estado />
+            <Estado /> */}
           </fieldset>
 
           <fieldset className="lastJob">
-            <ResumoCV />
+{/*             <ResumoCV />
             <Cargo/>
-            <CargoDescricao />
+            <CargoDescricao /> */}
           </fieldset>
 
-          <button type="submit"></button>
-          <button type="reset"></button>
+          <button type="submit">Cadastrar</button>
+          <button type="reset">Limpar dados</button>
 
         </form>
 
