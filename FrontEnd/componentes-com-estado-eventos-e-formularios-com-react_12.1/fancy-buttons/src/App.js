@@ -6,6 +6,7 @@ class App extends React.Component {
   constructor() {
     super();
 
+    // o this é um objeto
     this.state = {
       clickBtn1: 0,
       clickBtn2: 0,
@@ -28,6 +29,9 @@ class App extends React.Component {
   handleClick2 = () => {
     console.log('Você clicou no botão 2');
     // agora, baseado no estado anterior, será incrementada a contagem de cliques cada vez que o botão for clicado
+    /* Passando uma callback à função setState, que recebe de parâmetros
+    o estado anterior e as props do componente, você garante que as atualizações
+    do estado acontecerão uma depois da outra! */
     this.setState((prevState) => ({
       clickBtn2: prevState.clickBtn2 + 1,
     }),
@@ -66,7 +70,7 @@ class App extends React.Component {
           <p>
             Abra do console para ver o que este botão faz
           </p>
-          
+
           <button onClick={this.handleClick1}>
             Botão 1 | Só vai mudar para 1: {this.state.clickBtn1}.
           </button>
