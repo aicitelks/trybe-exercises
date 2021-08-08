@@ -36,6 +36,12 @@ class App extends React.Component {
   // SOURCE: gabarito
   sendForm = () => { this.setState({ formEnviado: true }) };
 
+  resetForm = () => { this.setState({
+    nome: '',
+    email: '',
+    formEnviado: false, 
+  }) };
+
   render() {
     const { nome, email, formEnviado } = this.state;
 
@@ -78,7 +84,7 @@ class App extends React.Component {
           </fieldset>
 
           <button type="submit">Enviar</button>
-          <button type="reset">Limpar</button>
+          <button type="reset" onClick={ this.resetForm }>Limpar</button>
 
           {/** SOURCE: gabarito */}
           <input type="button" onClick={ this.sendForm } value="Chamar <DadosForm />" />
