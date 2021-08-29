@@ -1,6 +1,6 @@
 import { SELECT_SUBREDDIT } from '../actions';
 
-const selectedSubreddit = (state = 'reactjs', action) => {
+const selectSubreddit = (state = 'reactjs', action) => {
   switch (action.type) {
     case SELECT_SUBREDDIT:
       return action.subreddit;
@@ -9,4 +9,4 @@ const selectedSubreddit = (state = 'reactjs', action) => {
   }
 };
 
-export default selectedSubreddit;
+export default selectSubreddit;

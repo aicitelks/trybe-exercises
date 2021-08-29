@@ -19,7 +19,7 @@ const posts = ( state = INITIAL_POSTS_STATE, action ) => {
   switch(action.type) {
     case REFRESH_SUBREDDIT:
       return {
-        ...states,
+        ...state,
         shouldRefreshSubreddit: true,
       };
     case REQUEST_POSTS:

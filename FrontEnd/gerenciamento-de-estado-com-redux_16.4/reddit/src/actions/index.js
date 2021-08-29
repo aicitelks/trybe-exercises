@@ -1,4 +1,4 @@
-import { getPostBySubreddit } from '../services/redditAPI';
+import { getPostsBySubreddit } from '../services/redditAPI';
 
 //actions type
 export const REFRESH_SUBREDDIT = 'REFRESH_SUBREDDIT';
@@ -36,14 +36,16 @@ export const receivePostsFailure = (subreddit, error) => ({
   error,
 });
 
-export const fetchPosts = () => (dispatch) => {
-  dispatch(requestPosts(subreddit));
+function fetchPosts(subreddit) {
+  return (dispatch) => {
+    dispatch(requestPosts(subreddit));
 
-  getPostBySubreddit(subreddit)
-    .then(
-      (posts) => dispatch(receivePostsSuccess(subreddit, posts)),
-      (error) => dispatch(receivePostsFailure(subreddit, error)),
-    );  
+    return getPostsBySubreddit(subreddit)
+      .then(
+        (posts) => dispatch(receivePostsSuccess(subreddit, posts)),
+        (error) => dispatch(receivePostsFailure(subreddit, error.message)),
+      );
+  };
 }
 
 export const shouldFetchPosts = (state, subreddit) => {

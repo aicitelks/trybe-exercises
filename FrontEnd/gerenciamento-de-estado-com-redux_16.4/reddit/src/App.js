@@ -27,7 +27,7 @@ class App extends React.Component {
   }
 
   handleRefreshClick(event) {
-    event.preventDefalt();
+    event.preventDefault();
 
     const { dispatch, selectSubreddit } = this.props;
     dispatch(refreshSubreddit(selectSubreddit));
@@ -36,7 +36,6 @@ class App extends React.Component {
 
   renderLastUpdateAt() {
     const { lastUpdated } = this.props;
-
     return (
       <span>
         {`Last update at: ${new Date(lastUpdated).toLocaleTimeString()}.`}
@@ -61,7 +60,7 @@ class App extends React.Component {
   render() {
     const {
       availableSubreddits,
-      selectedSubreddit,
+      selectSubreddit,
       posts = [],
       isFetching,
       lastUpdated,
