@@ -1,4 +1,7 @@
 ### Exercício Bônus
+
+    Resolução baseada no gabarito.
+
 Usando o Redux no React - Actions Assíncronas
 
 Como Redux exige muita prática, eis aqui mais um exercício! Desta vez, um mini-projeto para se desenvolver e guardar no portfólio!
@@ -18,4 +21,5 @@ Pontos importantes:
 - Antes de começar a sair implementando, pare e pense sobre como desenhar o estado da sua aplicação. O que você precisa guardar no estado? Como você vai estruturar e organizar seus dados? Quais actions você precisa ter para modelar os eventos que ocorrerão na sua aplicação (fazer uma requisição, obter sua resposta, atualizar a lista, etc...)? Como você vai organizar seus reducers (lembrando que NUNCA deve-se alterar o estado, e sim criar um novo )?
 - Como você está fazendo uma requisição de um recurso externo, o que acontece se a requisição de postagens referentes a um subreddit falhar? Adicione na sua aplicação tratamento de erro para esses casos, salvando no estado da sua aplicação a mensagem de erro para o subreddit correspondente. Dica: procure e investigue no Google como fazer tratamento de erro de requisição no contexto de Redux .
 - Como forma de ter um melhor diagnóstico sobre o fluxo de dados em uma aplicação Redux , instale o middleware redux-logger e o integre na sua aplicação.
+
 - Instale a extensão do Chrome redux-dev-tools e a integre na sua aplicação. Com isso, você tem um ambiente completo para poder analisar e depurar sua aplicação. 🚀
