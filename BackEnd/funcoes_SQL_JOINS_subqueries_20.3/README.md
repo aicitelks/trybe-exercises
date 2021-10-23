@@ -1,4 +1,4 @@
-# EXERCÍCIOS DE CONTEÚDO
+# Exercícios de Conteúdo
 
 ## Desafios stored procedure
  
@@ -10,9 +10,14 @@ Para todos os desafios abaixo, certifique-se de que a função possa ser chamada
 
 3) Monte uma procedure que receba o email de um cliente como parâmetro de entrada e diga se o cliente está ou não ativo, através de um parâmetro de saída.
 
+## Agora você vai desenvolver algumas functions
+1) Utilizando a tabela sakila.payment , monte uma function que retorna a quantidade total de pagamentos feitos até o momento por um determinado customer_id . 
 
+2) Crie uma function que, dado o parâmetro de entrada inventory_id , retorna o nome do filme vinculado ao registro de inventário com esse id. 
 
-It's Trigger Time
+3) Crie uma function que receba uma determinada categoria de filme em formato de texto (ex: 'Action' , 'Horror' ) e retorna a quantidade total de filmes registrados nessa categoria. 
+
+## It's Trigger Time
 Alright, people! Hora de montar uns triggers. 
 
 1) Crie um TRIGGER que, a cada nova inserção feita na tabela carros , defina o valor da coluna data_atualizacao para o momento do ocorrido, a acao para 'INSERÇÃO' e a coluna disponivel_em_estoque para 1 .
@@ -22,7 +27,7 @@ Alright, people! Hora de montar uns triggers.
 3) Crie um TRIGGER que, a cada exclusão feita na tabela carros , envie para a tabela log_operacoes as informações do tipo_operacao como 'EXCLUSÃO' e a data_ocorrido como o momento da operação.
 
 
-## Exercícios de Triggers
+# Exercícios - Triggers
 
 1)    Crie um Trigger para INSERT que deve definir o valor do campo release_year da tabela movies como o ano atual de forma dinâmica, sem haver a necessidade de digitar manualmente o valor do ano. Além disso, crie um outro Trigger para INSERT que adiciona um novo registro na tabela movies_logs , informando o movie_id do filme que acaba de ser inserido na tabela movies , a executed_action como 'INSERT' e a log_date como a data atual.
 
