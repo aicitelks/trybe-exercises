@@ -20,9 +20,8 @@ BEGIN
 END $$
 DELIMITER ;
 
-SELECT * FROM payment;
-
-SELECT CountPayments(2);
+-- SELECT * FROM payment;
+-- SELECT CountPayments(2);
 
 -- 2. Crie uma function que, dado o parâmetro de entrada inventory_id , 
 -- retorna o nome do filme vinculado ao registro de inventário com esse id. 
@@ -47,7 +46,7 @@ BEGIN
 END $$
 DELIMITER ;
 
-SELECT GetFilmTitleByInventoryID(10);
+-- SELECT GetFilmTitleByInventoryID(10);
 
 -- 3. Crie uma function que receba uma determinada categoria de filme em formato de texto (ex: 'Action' , 'Horror' )
 -- e retorna a quantidade total de filmes registrados nessa categoria.
@@ -69,4 +68,4 @@ BEGIN
 END $$
 DELIMITER ;
 
-SELECT GetTotalFilmByCategory('Action');
+-- SELECT GetTotalFilmByCategory('Action');

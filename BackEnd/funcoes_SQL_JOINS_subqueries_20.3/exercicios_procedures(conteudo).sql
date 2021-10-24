@@ -7,11 +7,11 @@ BEGIN
 END $$
 DELIMITER ;
 
-CALL ShowAllActors();
+-- CALL ShowAllActors();
 
--- Criando uma variável
-SET @mySchool = 'Trybe';
-SELECT @mySchool;
+-- -- Criando uma variável
+-- SET @mySchool = 'Trybe';
+-- SELECT @mySchool;
 
 -- 1) Monte uma procedure que exiba os 10 atores mais populares, baseado em sua quantidade de filmes.
 -- Essa procedure não deve receber parâmetros de entrada ou saída
@@ -27,9 +27,9 @@ BEGIN
 END $$
 DELIMITER ;
 
-CALL ShowMostFamousActors();
+-- CALL ShowMostFamousActors();
 
-SELECT * FROM film_actor;
+-- SELECT * FROM film_actor;
 
 -- 2) Monte uma procedure que receba como parâmetro de entrada o nome da categoria desejada em uma string
 -- e que exiba o id do filme, seu titulo , o id de sua categoria e o nome da categoria selecionada.
@@ -45,9 +45,9 @@ BEGIN
 END $$
 DELIMITER ;
 
-CALL FindMovieByCategory('Action');
+-- CALL FindMovieByCategory('Action');
 
-SELECT * FROM film_category;
+-- SELECT * FROM film_category;
 
 -- 3) Monte uma procedure que receba o email de um cliente como parâmetro de entrada 
 -- e diga se o cliente está ou não ativo, através de um parâmetro de saída.
@@ -66,7 +66,7 @@ BEGIN
 END $$
 DELIMITER ;
 
-SELECT @ActiveStatus;
-CALL CheckIsActiveClient('MARY.SMITH@sakilacustomer.org', @ActiveStatus);
+-- SELECT @ActiveStatus;
+-- CALL CheckIsActiveClient('MARY.SMITH@sakilacustomer.org', @ActiveStatus);
 
-SELECT active FROM customer;
+-- SELECT active FROM customer;

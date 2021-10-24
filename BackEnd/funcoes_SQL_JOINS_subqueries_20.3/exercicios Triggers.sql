@@ -28,10 +28,10 @@ BEGIN
 END $$
 DELIMITER ;
 
-INSERT INTO movies (ticket_price, ticket_price_estimation) VALUES(15.5, '500');
+-- INSERT INTO movies (ticket_price, ticket_price_estimation) VALUES(15.5, '500');
 
-SELECT * FROM movies;
-SELECT * FROM movies_logs;
+-- SELECT * FROM movies;
+-- SELECT * FROM movies_logs;
 
 ## EXERCÍCIO 2
 
@@ -54,12 +54,12 @@ BEGIN
 END $$
 DELIMITER ;
 
-UPDATE movies
-SET ticket_price = 2.10
-WHERE movie_id = 5;
+-- UPDATE movies
+-- SET ticket_price = 2.10
+-- WHERE movie_id = 5;
 
-SELECT * FROM movies;
-SELECT * FROM movies_logs;
+-- SELECT * FROM movies;
+-- SELECT * FROM movies_logs;
 
 ## EXERCÍCIO 3
 
@@ -76,7 +76,7 @@ BEGIN
 END $$
 DELIMITER ;
 
-DELETE FROM movies WHERE movie_id = 5;
+-- DELETE FROM movies WHERE movie_id = 5;
 
-SELECT * FROM movies;
-SELECT * FROM movies_logs;
+-- SELECT * FROM movies;
+-- SELECT * FROM movies_logs;

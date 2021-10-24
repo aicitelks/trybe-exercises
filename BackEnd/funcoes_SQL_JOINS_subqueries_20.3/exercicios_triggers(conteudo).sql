@@ -13,10 +13,10 @@ BEGIN
 END $$
 DELIMITER ;
 
-INSERT INTO carros (preco) VALUES (30.000);
-SELECT * FROM carros;
+-- INSERT INTO carros (preco) VALUES (30.000);
+-- SELECT * FROM carros;
 
-DROP TRIGGER insert_carros;
+-- DROP TRIGGER insert_carros;
 
 
 -- 2) Crie um TRIGGER que, a cada atualização feita na tabela carros ,
@@ -33,7 +33,7 @@ BEGIN
 END $$
 DELIMITER ;
 
-UPDATE carros SET preco = 100.00 WHERE id_carro = 3;
+-- UPDATE carros SET preco = 100.00 WHERE id_carro = 3;
 
 -- 3) Crie um TRIGGER que, a cada exclusão feita na tabela carros ,
 -- envie para a tabela log_operacoes as informações do 
@@ -47,5 +47,5 @@ BEGIN
 END $$
 DELIMITER ;
 
-DELETE FROM carros WHERE id_carro = 2;
-SELECT * FROM log_operacoes;
+-- DELETE FROM carros WHERE id_carro = 2;
+-- SELECT * FROM log_operacoes;
