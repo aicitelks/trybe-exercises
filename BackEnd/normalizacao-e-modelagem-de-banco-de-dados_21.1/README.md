@@ -14,5 +14,6 @@
 -- Além disso, cada cuidador possui um gerente, sendo que cada gerente pode ser responsável 
 -- por mais de um cuidador. 
 
--- N animal N cuidador
--- N cuidador 1 gerente
+Relacionamentos:
+-- |Animal| N--<pode ter>--N |Cuidador|
+-- |Cuidador| N--<pode ter>--1 |Gerente|
