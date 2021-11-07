@@ -1,0 +1,4 @@
+.curriculum {
+  display: flex;
+  flex-direction: column;
+}
