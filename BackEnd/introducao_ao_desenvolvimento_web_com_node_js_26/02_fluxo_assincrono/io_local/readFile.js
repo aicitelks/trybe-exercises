@@ -13,7 +13,7 @@
 // AGORA COM PROMISE
 const fs = require('fs').promises;
 
-const nomeDoArquivo = 'meu-arquivo.txt';
+const nomeDoArquivo = '02_fluxo_assincrono/io_local/meu-arquivo2.txt';
 
 fs.readFile(nomeDoArquivo, 'utf8')
   .then((data) => {
