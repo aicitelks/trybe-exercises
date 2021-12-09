@@ -1,0 +1,7 @@
+ O método readFileSync recebe dois parâmetros:
+
+    O nome do arquivo;
+    Um parâmetro opcional que, quando é uma string, define o encoding que será utilizado durante a leitura do arquivo.
+
+Mas e se ocorrer um erro na leitura do arquivo?
+Com funções síncronas, como readFileSync , você deve tratar explicitamente os erros que puderem acontecer. Nesse exemplo, usamos um bloco try...catch para capturar quaisquer erros que possam acontecer durante a leitura do arquivo e imprimimos uma mensagem para o usuário no terminal. 
