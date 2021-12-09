@@ -15,4 +15,13 @@ A questão é que toda função na qual utilizamos async, automaticamente passa 
 
 O resultado de usarmos async / await é que o código fica com uma sintaxe quase idêntica à sintaxe utilizada para código síncrono. 
 
+## Rodando promessas simultaneamente com Promise.all
+Pelo fato das Promises serem executadas quando são instanciadas, todos os arquivos serão lidos ao mesmo tempo e não tem como saber quando cada um vai terminar de ser lido. 
+
+Mas e se precisarmos do resultado da leitura dos três arquivos?
+
+Entra no palco: Promise.all !
+
+O Promise.all é um método da Promise que nos permite passar um array de Promises e receber de volta uma única Promise. Ela será resolvida com os resultados de todas as Promises, assim que todas elas forem resolvidas. Esse método também nos permite utilizar um único catch , que será chamado caso qualquer uma das Promises seja rejeitada.
+
 ###### Esta pasta contém exemplos sobre eles.
