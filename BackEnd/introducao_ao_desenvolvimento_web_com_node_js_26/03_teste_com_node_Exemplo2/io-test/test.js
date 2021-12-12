@@ -1,3 +1,4 @@
+const { expect } = require('chai');
 const leArquivo = require('./leArquivo');
 
 const CONTEUDO_DO_ARQUIVO = 'VQV com TDD';
