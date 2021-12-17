@@ -3,9 +3,9 @@ const express = require('express');
 const { read } = require('fs');
 const app = express();
 
-// lista de receitas
+// LISTAS
 const recipes = [
-  { id: 1, name: 'Lasanha', price: 40.0, waitTime: 30 },
+  { id: 1, name: 'Mingau', price: 40.0, waitTime: 30 },
   { id: 2, name: 'Macarrão a Bolonhesa', price: 35.0, waitTime: 25 },
   { id: 3, name: 'Macarrão com molho branco', price: 35.0, waitTime: 25 },
 ];
@@ -19,14 +19,19 @@ const drinks = [
   { id: 6, name: 'Água Mineral 500 ml', price: 5.0 },
 ];
 
+// RECEITAS
 // Retorna a lista de receitas, quando a requisição é do tipo 'GET'
 app.get('/recipes', function (req, res) {
   res.json(recipes);
 });
 
 app.get('/recipes/search', function (req, res) {
-  const { name } = req.query;
-  const filteredRecipes = recipes.filter((r) => r.name.includes(name));
+  const { name, minPrice } = req.query;
+  const filteredRecipes = recipes.filter((r) => {
+    r.name.includes(name)
+    // && r.price < parseInt(maxPrice)
+    && r.price >= parseInt(minPrice)
+  });
   res.status(200).json(filteredRecipes);
 });
 
@@ -39,8 +44,16 @@ app.get('/recipes/:id', function (req, res) {
   res.status(200).json(recipe);
 });
 
+// DRINKS
 app.get('/drinks', (req, res) => {
   res.json(drinks);
+});
+
+app.get('/drinks/search', (req, res) => {
+  const { name } = req.query;
+  const filterDrinks =  drinks.filter((d) => d.name.includes(name)); 
+
+  res.status(200).json(filterDrinks);
 });
 
 app.get('/drinks/:idDrink', (req, res) => {
