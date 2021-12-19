@@ -1,7 +1,12 @@
 /* index.js */
+
 const express = require('express');
-const { read } = require('fs');
+const bodyParser = require('body-parser');
 const app = express();
+
+app.use(bodyParser.json());
+
+// const { read } = require('fs');
 
 // LISTAS
 const recipes = [
@@ -17,7 +22,7 @@ const drinks = [
   { id: 4, name: 'Suco 1l', price: 10.0 },
   { id: 5, name: 'Cerveja Lata', price: 4.5 },
   { id: 6, name: 'Água Mineral 500 ml', price: 5.0 },
-];
+]; 
 
 // RECEITAS
 // Retorna a lista de receitas, quando a requisição é do tipo 'GET'
@@ -65,6 +70,28 @@ app.get('/drinks/:idDrink', (req, res) => {
 
   res.status(200).json(drink);
 });
+
+// ROTA QUE RECEBE DADOS NO body DA REQUISIÇÃO
+app.post('/recipes', function (req, res) {
+  const { id, name, price } = req.body;
+
+  recipes.push({ id, name, price });
+
+  res.status(201).json({ message: 'Deu certo. Recipe created successfully!' });
+});
+
+// fetch(`http://localhost:3001/recipes/`, {
+//   method: 'POST',
+//   headers: {
+//     Accept: 'application/json',
+//     'Content-Type': 'application/json',
+//   },
+//   body: JSON.stringify({
+//     id: 4,
+//     name: 'Macarrão com Frango',
+//     price: 30
+//   })
+// });
 
 app.listen(3001, () => {
   console.log('Aplicação ouvindo na porta 3001');
