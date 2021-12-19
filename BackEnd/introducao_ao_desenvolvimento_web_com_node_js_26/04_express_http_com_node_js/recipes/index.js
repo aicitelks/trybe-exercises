@@ -71,15 +71,22 @@ app.get('/drinks/:idDrink', (req, res) => {
   res.status(200).json(drink);
 });
 
-// ROTA QUE RECEBE DADOS NO body DA REQUISIÇÃO
+// ROTAS QUE RECEBEM DADOS NO body DA REQUISIÇÃO
 app.post('/recipes', function (req, res) {
-  const { id, name, price } = req.body;
+  const { id, name, price, waitTime } = req.body;
 
-  recipes.push({ id, name, price });
+  recipes.push({ id, name, price, waitTime });
 
   res.status(201).json({ message: 'Deu certo. Recipe created successfully!' });
 });
 
+app.post('/drinks', (req, res) => {
+  const { id, name, price } = req.body;
+
+  drinks.push({ id, name, price });
+
+  res.status(201).json({ message: 'Bebida adicionada.' });
+});
 // fetch(`http://localhost:3001/recipes/`, {
 //   method: 'POST',
 //   headers: {
@@ -92,6 +99,14 @@ app.post('/recipes', function (req, res) {
 //     price: 30
 //   })
 // });
+
+// ROTA QUE VERIFICA SE O TOKEN POSSUI 16 CARACTERES
+app.get('/validateToken', function (req, res) {
+  const token = req.headers.authorization;
+  if (token.length !== 16) return res.status(401).json({message: 'Invalid Token!'})
+
+  res.status(200).json({message: 'Valid Token!'})
+});
 
 app.listen(3001, () => {
   console.log('Aplicação ouvindo na porta 3001');
