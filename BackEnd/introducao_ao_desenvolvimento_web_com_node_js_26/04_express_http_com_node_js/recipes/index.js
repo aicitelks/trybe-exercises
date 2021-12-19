@@ -108,6 +108,88 @@ app.get('/validateToken', function (req, res) {
   res.status(200).json({message: 'Valid Token!'})
 });
 
+// ROTAS QUE ATUALIZAM UM PRODUTO
+app.put('/recipes/:id', function (req, res) {
+  const { id } = req.params; // pega da URL
+  const { name, price } = req.body; // pega do corpo
+
+  const recipeIndex = recipes.findIndex((r) => r.id === parseInt(id));
+
+  if (recipeIndex === -1) return res.status(404).json({ message: 'Recipe not found!' });
+
+  recipes[recipeIndex] = { ...recipes[recipeIndex], name, price };
+
+  res.status(204).end(); // neste caso, nada é retornado, apenas o código é informado indicando que deu certo
+});
+
+app.put('/drinks/:id', (req, res) => {
+  const { id } = req.params;
+  const { name, price } = req.body;
+
+  const drinkIndex = drinks.findIndex((drink) => drink.id === parseInt(id));
+
+  if (drinkIndex === -1) return res.status(404).json({ message: 'Drink não encontrado' });
+
+  drinks[drinkIndex] = { ...drinks[drinkIndex], name, price };
+
+  res.status(200).json({ message: 'Drink atualizado' });
+});
+
+// ROTAS QUE DELETAM UM PRODUTO
+app.delete('/recipes/:id', function (req, res) {
+  const { id } = req.params;
+  const recipeIndex = recipes.findIndex((r) => r.id === parseInt(id));
+
+  if (recipeIndex === -1) return res.status(404).json({ message: 'Recipe not found!' });
+
+  recipes.splice(recipeIndex, 1);
+
+  res.status(204).end();
+});
+
+app.delete('/drinks/:id', (req, res) => {
+  const { id } = req.params;
+  const drinkIndex = drinks.findIndex((d) => d.id === parseInt(id));
+
+  if (drinkIndex === -1) return res.status(404).json({ message: 'Drink não localizado' });
+
+  drinks.splice(drinkIndex, 1);
+
+  res.status(204).end();
+});
+
+
+app.get('/xablau', function (req, res) {
+  return res.status(404).json({ message: `Xablau!`});
+});
+
+// ROTA QUE NÃO EXISTE
+app.all('*', function (req, res) {
+  return res.status(404).json({ message: `Rota '${req.path}' não existe!`});
+});
+
+// Requisição do tipo PUT
+// fetch(`http://localhost:3001/recipes/2`, {
+//   method: 'PUT',
+//   headers: {
+//     Accept: 'application/json',
+//     'Content-Type': 'application/json',
+//   },
+//   body: JSON.stringify({
+//     name: 'Macarrão ao alho e óleo',
+//     price: 40
+//   })
+// });
+
+// // Requisição do tipo DELETE
+// fetch(`http://localhost:3001/recipes/4`, {
+//   method: 'DELETE',
+//   headers: {
+//     Accept: 'application/json',
+//     'Content-Type': 'application/json',
+//   }
+// });
+
 app.listen(3001, () => {
   console.log('Aplicação ouvindo na porta 3001');
 });
