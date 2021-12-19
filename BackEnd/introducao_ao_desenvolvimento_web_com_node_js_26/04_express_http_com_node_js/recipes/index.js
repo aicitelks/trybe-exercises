@@ -6,8 +6,6 @@ const app = express();
 
 app.use(bodyParser.json());
 
-// const { read } = require('fs');
-
 // LISTAS
 const recipes = [
   { id: 1, name: 'Mingau', price: 40.0, waitTime: 30 },
@@ -87,18 +85,6 @@ app.post('/drinks', (req, res) => {
 
   res.status(201).json({ message: 'Bebida adicionada.' });
 });
-// fetch(`http://localhost:3001/recipes/`, {
-//   method: 'POST',
-//   headers: {
-//     Accept: 'application/json',
-//     'Content-Type': 'application/json',
-//   },
-//   body: JSON.stringify({
-//     id: 4,
-//     name: 'Macarrão com Frango',
-//     price: 30
-//   })
-// });
 
 // ROTA QUE VERIFICA SE O TOKEN POSSUI 16 CARACTERES
 app.get('/validateToken', function (req, res) {
@@ -167,28 +153,6 @@ app.get('/xablau', function (req, res) {
 app.all('*', function (req, res) {
   return res.status(404).json({ message: `Rota '${req.path}' não existe!`});
 });
-
-// Requisição do tipo PUT
-// fetch(`http://localhost:3001/recipes/2`, {
-//   method: 'PUT',
-//   headers: {
-//     Accept: 'application/json',
-//     'Content-Type': 'application/json',
-//   },
-//   body: JSON.stringify({
-//     name: 'Macarrão ao alho e óleo',
-//     price: 40
-//   })
-// });
-
-// // Requisição do tipo DELETE
-// fetch(`http://localhost:3001/recipes/4`, {
-//   method: 'DELETE',
-//   headers: {
-//     Accept: 'application/json',
-//     'Content-Type': 'application/json',
-//   }
-// });
 
 app.listen(3001, () => {
   console.log('Aplicação ouvindo na porta 3001');
