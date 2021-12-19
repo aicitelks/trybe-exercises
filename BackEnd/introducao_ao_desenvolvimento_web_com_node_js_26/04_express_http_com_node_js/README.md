@@ -58,5 +58,9 @@ Agora, para executar a aplicação, utilizar o seguinte comando:
 **ATENÇÃO**  
 O Nodemon deve ser usado apenas o ambiente de desenvolvimento. Para executar uma aplicação em produção, deve-se utilizar o script ```start``` com o comando ```node index.js```.
 
+Instalar o pacote bodyParser é necessário para que possa ser feito o *parse* dos dados comprimidos que o front-end envia, para um formato conhecido do back-end. Esse formato é o JSON.
+```
+npm i body-parser
+```
 
 *#BoraCodar*
