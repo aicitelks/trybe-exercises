@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
 const app = express();
+
 app.use(bodyParser.json());
 
 const recipes = [
@@ -23,17 +23,17 @@ app.get('/recipes/search', function (req, res) {
 app.get('/recipes/:id', function (req, res) {
   const { id } = req.params;
   const recipe = recipes.find((r) => r.id === parseInt(id));
-  if (!recipe) return res.status(404).json({ message: 'Recipe not found!'});
+  if (!recipe) return res.status(404).json({ message: 'Recipe not found!' });
 
   res.status(200).json(recipe);
 });
-
+/* 
 app.post('/recipes', function (req, res) {
   const { id, name, price, waitTime } = req.body;
-  recipes.push({ id, name, price, waitTime});
-  res.status(201).json({ message: 'Recipe created successfully!'});
+  recipes.push({ id, name, price, waitTime });
+  res.status(201).json({ message: 'Recipe created successfully!' });
 });
-
+ */
 app.put('/recipes/:id', function (req, res) {
   const { id } = req.params;
   const { name, price, waitTime } = req.body;
@@ -56,6 +56,28 @@ app.delete('/recipes/:id', function (req, res) {
 
   res.status(204).end();
 });
+
+// ... PARTE 2 ...
+
+/** UMA ROTA, DOIS MIDDLEWARES */
+app.post('/recipes', 
+  // MIDDLEWARE 1
+  function (req, res, next) {
+    const { name } = req.body;
+    // VALIDA SE O NAME ESTÁ VAZIO, E RETORNA PRA REQUISIÇÃO O STATUS 400 E O JSON COM A MENSAGEM
+    if (!name || name === '') return res.status(400).json({ message: 'Invalid data!' }); // 1
+
+    // CHAMA O PRÓXIMO MIDDLEWARE
+    next(); // 2
+  },
+  // MIDDLEWARE 2
+  function (req, res) { // 3
+    const { id, name, price } = req.body;
+    recipes.push({ id, name, price });
+    res.status(201).json({ message: 'Recipe created successfully!' });
+  }
+);
+// ...
 
 app.all('*', function (req, res) {
     return res.status(404).json({ message: `Rota '${req.path}' não existe!`});
