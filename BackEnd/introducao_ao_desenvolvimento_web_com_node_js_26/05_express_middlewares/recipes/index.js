@@ -2,7 +2,17 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
+const authMiddleware = require('./auth-middleware');
+
+// Esta rota não passa pelo middleware de autenticação!
+app.get('/open', function (req, res) {
+  res.send('Estou sendo mostrada sem passar pela autenticação!')
+});
+
 app.use(bodyParser.json());
+
+// o app.use só afeta as rotas que vem abaixo da sua definição, ou seja, todas as rotas CRUD abaixo passarão pela autenticação e a rota /open não passará.
+app.use(authMiddleware);
 
 const recipes = [
   { id: 1, name: 'Lasanha', price: 40.0, waitTime: 30 },
@@ -68,21 +78,19 @@ app.delete('/recipes/:id', function (req, res) {
   res.status(204).end();
 });
 
-/** UMA ROTA, DOIS MIDDLEWARES */
+/** UMA ROTA, VÁRIOS MIDDLEWARES */
 app.post('/recipes',
-  // MIDDLEWARE 1
   validateName,
   validatePrice,
-  // MIDDLEWARE 2
-  function (req, res) { // 3
+  function (req, res) {
     const { id, name, price } = req.body;
     recipes.push({ id, name, price });
-    res.status(201).json({ message: 'Recipe created successfully!' });
+    res.status(201).json({ message: 'Após a autenticação, Recipe created successfully!' });
   }
 );
 
 app.all('*', function (req, res) {
-    return res.status(404).json({ message: `Rota '${req.path}' não existe!`});
+    return res.status(404).json({ message: `Rota '${req.path}' não existe!` });
 });
 
 app.listen(3001, () => {
