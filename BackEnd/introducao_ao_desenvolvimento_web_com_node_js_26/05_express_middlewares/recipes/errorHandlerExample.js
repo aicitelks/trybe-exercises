@@ -7,8 +7,9 @@
 * {
 *   "error": "Erro: ENOENT: no such file or directory, open './abc'"
 * }
-* Agora, se você criar o arquivo e jogar o conteúdo, por exemplo, usando o comando echo 'abc' > abc e fizer a requisição 
-* de novo, a requisição vai retornar uma resposta com o conteúdo do arquivo. 
+* Agora, se você criar o arquivo e jogar o conteúdo, por exemplo, usando o comando: 
+* echo 'abc' > abc 
+* e fizer a requisição de novo, ela requisição vai retornar uma resposta com o conteúdo do arquivo. 
 */
 
 const express = require('express');
