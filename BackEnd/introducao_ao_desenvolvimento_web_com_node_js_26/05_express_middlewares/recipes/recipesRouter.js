@@ -4,7 +4,7 @@ const router = express.Router();
 
 const authMiddleware = require('./auth-middleware');
 
-// o app.use só afeta as rotas que vem abaixo da sua definição, ou seja, todas as rotas CRUD abaixo passarão pela autenticação e a rota /open não passará.
+// o app.use (ou router.use neste caso) só afeta as rotas que vem abaixo da sua definição, ou seja, todas as rotas CRUD abaixo passarão pela autenticação e a rota /open não passará.
 router.use(authMiddleware);
 
 const recipes = [
