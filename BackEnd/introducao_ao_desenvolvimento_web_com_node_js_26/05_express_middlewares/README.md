@@ -15,6 +15,7 @@ Instalar
 ```
   npm i express body-parser
   npm i nodemon -D
+  npm i express-rescue
 ```
 
 Criar o entrypoint
