@@ -1,8 +1,8 @@
-// index.js
+// index.js 
 
 const express = require('express'); // importa o express
 
-const Author = require('./models/Author');
+const Author = require('./models/Authors');
 
 const app = express(); // inicializa a aplicação
 
