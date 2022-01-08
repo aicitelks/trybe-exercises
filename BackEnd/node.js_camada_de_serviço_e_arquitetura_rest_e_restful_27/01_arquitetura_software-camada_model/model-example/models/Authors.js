@@ -2,6 +2,7 @@
 
 const connection = require('./connection');
 
+/** **************************** MySQL **************************** */
 // Cria uma string com o nome completo do autor
 const getFullNameAuthor = (first_name, middle_name, last_name) => {
 
@@ -25,10 +26,11 @@ const serialize = ({ id, first_name, middle_name, last_name }) => ({
 
 // NOTE: Utilizaremos essas duas funções serialize e getFullNameAuthor nessa aplicação em todos os momentos que precisarmos gerar um objeto com propriedades em camelCase a partir de um objeto em snake_case , e para gerar uma string contendo o fullName da pessoa autora. 
 
-// A função getFullNameAuthor recebe os dados brutos e transforma na informação que queremos, o nome completo da pessoa autora! Com isso não modificamos em nada nosso getAll , assim desacoplando a necessidade dela conhecer outras funções além da serialize. 
+// A função getFullNameAuthor recebe os dados brutos e transforma na informação que queremos, o nome completo da pessoa autora! Com isso não modificamos em nada nosso getAllMySQL, assim desacoplando a necessidade dela conhecer outras funções além da serialize. 
+
 
 // Busca todos os autores do banco.
-const getAll = async () => {
+const getAllMySQL = async () => {
   /**
    * O model Author exporta uma função getAll
    * Essa função retornará todos os escritores cadastrados no banco de dados. 
@@ -41,6 +43,45 @@ const getAll = async () => {
   return authors.map(serialize);
 };
 
+/** **************************** MONGODB **************************** */
+
+const getNewAuthor = ({ id, firstName, middleName, lastName }) => {
+  const fullName = [firstName, middleName, lastName].filter((name) => name).join(" ");
+
+  return {
+    id,
+    firstName,
+    middleName,
+    lastName,
+    fullName
+  }
+};
+// Busca todos os autores do banco.
+/** 
+ *  Ela busca no banco todos os escritores, faz um mapeamento para o formato de objeto que definimos para Author e retorna uma Promise 
+ * no authors.map utiliza um destructure de objeto, porque o MongoDB devolve  um objeto para cada documento encontrado. 
+ *  A API que o pacote mongodb oferece é bem semelhante à que usamos no cliente do MongoDB, com pequenas mudanças. Em vez de fazer db.authors.find() , por exemplo, precisamos fazer db.collection('authors').find() . 
+ * Além de find , você pode utilizar outros métodos conhecidos, como findOne , insertMany e updateMany .
+
+ * Nota : o método toArray converte o cursor retornado pelo método find em um array de documentos;
+*/
+const getAll = async () => {
+  return connection()
+    .then((db) => db.collection('authors').find().toArray())
+    .then((authors) =>
+      authors.map(({ _id, firstName, middleName, lastName }) =>
+        getNewAuthor({
+          id: _id,
+          firstName,
+          middleName,
+          lastName,
+        })
+      )
+    );
+}
+
+// alterar para uma dessas funções a sua chamada no index.js e mudar a conexão
 module.exports = {
-  getAll, // função que retorna todos os autores do banco
+  getAllMySQL, // função que retorna todos os autores do banco MySQL
+  getAll, // função que retorna todos os autores do banco MONGODB
 };
